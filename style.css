@@ -1,0 +1,152 @@
+:root {
+  --preto: #0A0A0A;
+  --card: #141414;
+  --cinza: #1A1A1A;
+  --linha: #2A2A2A;
+  --texto: #FFFFFF;
+  --apoio: #A8A8A8;
+  --amarelo: #FFB800;
+  --dourado: #C9A84C;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--preto);
+  color: var(--texto);
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Topo */
+.topo {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 16px;
+  background: rgba(10, 10, 10, .92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--linha);
+}
+.logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.7rem; letter-spacing: 2px; color: var(--dourado); }
+.selo { font-family: 'Bebas Neue', sans-serif; font-size: 1rem; letter-spacing: 2px; background: var(--amarelo); color: var(--preto); padding: 3px 10px; border-radius: 4px; }
+
+/* Hero */
+.hero { max-width: 1100px; margin: 0 auto; padding: 40px 16px 24px; }
+.kicker { text-transform: uppercase; letter-spacing: 3px; font-size: .75rem; color: var(--apoio); font-weight: 600; }
+.hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(4rem, 18vw, 8rem);
+  line-height: .9; letter-spacing: 1px; margin: 8px 0 12px;
+}
+.hero h1 span { color: var(--amarelo); }
+.sub { max-width: 560px; color: #DDD; font-size: 1rem; }
+.sub strong { color: var(--amarelo); }
+.passos { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.passos li {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--cinza); border: 1px solid var(--linha);
+  padding: 8px 12px; border-radius: 999px; font-size: .82rem; font-weight: 600;
+}
+.passos b {
+  display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%;
+  background: var(--amarelo); color: var(--preto); font-size: .75rem;
+}
+.passos em { font-style: normal; color: var(--amarelo); }
+
+/* Filtros */
+.filtros {
+  max-width: 1100px; margin: 0 auto; padding: 8px 16px 16px;
+  display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;
+}
+.chips { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; max-width: 100%; padding-bottom: 2px; }
+.chips::-webkit-scrollbar { display: none; }
+.chip {
+  flex: 0 0 auto;
+  background: transparent; color: var(--texto);
+  border: 1px solid var(--linha); border-radius: 999px;
+  padding: 8px 14px; font: 600 .82rem 'Montserrat', sans-serif; cursor: pointer;
+}
+.chip[aria-pressed="true"] { background: var(--amarelo); border-color: var(--amarelo); color: var(--preto); }
+.ordem { font-size: .8rem; color: var(--apoio); display: flex; align-items: center; gap: 8px; }
+.ordem select {
+  background: var(--cinza); color: var(--texto); border: 1px solid var(--linha);
+  border-radius: 8px; padding: 7px 10px; font: 600 .82rem 'Montserrat', sans-serif;
+}
+
+/* Grade */
+.grade {
+  max-width: 1100px; margin: 0 auto; padding: 0 16px 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+  gap: 10px;
+}
+
+.card {
+  position: relative;
+  background: var(--card); border: 1px solid var(--linha); border-radius: 14px;
+  display: flex; flex-direction: column; overflow: hidden;
+}
+.card .foto {
+  height: 210px; display: flex; align-items: center; justify-content: center;
+  background: radial-gradient(circle at 50% 40%, #262626 0%, #141414 70%);
+  padding: 14px;
+}
+.card .foto img { height: 100%; width: auto; max-width: 100%; object-fit: contain; filter: drop-shadow(0 8px 16px rgba(0,0,0,.6)); }
+.off {
+  position: absolute; top: 10px; left: 10px;
+  background: var(--amarelo); color: var(--preto);
+  font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 1px;
+  padding: 1px 8px; border-radius: 6px;
+}
+.estoque {
+  position: absolute; top: 10px; right: 10px;
+  font-size: .62rem; font-weight: 700; color: var(--texto);
+  background: rgba(0,0,0,.6); border: 1px solid var(--linha); padding: 3px 8px; border-radius: 999px;
+}
+.info { padding: 12px 12px 14px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.marca-tag { font-size: .7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--dourado); font-weight: 700; }
+.nome { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; line-height: 1; letter-spacing: .5px; }
+
+.specs { display: flex; flex-wrap: wrap; gap: 6px; }
+.spec {
+  background: var(--cinza); border: 1px solid var(--linha); color: var(--texto);
+  border-radius: 8px; padding: 5px 7px; font: 600 .7rem 'Montserrat', sans-serif;
+}
+button.spec { cursor: pointer; }
+button.spec[aria-pressed="true"] { border-color: var(--amarelo); box-shadow: inset 0 0 0 1px var(--amarelo); }
+.spec small { color: var(--apoio); font-weight: 500; }
+.dica { font-size: .7rem; color: var(--apoio); margin-top: -4px; }
+
+.precos { margin-top: auto; }
+.de { color: var(--apoio); font-size: .8rem; text-decoration: line-through; }
+.por { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; line-height: 1; color: var(--amarelo); letter-spacing: .5px; }
+.parc { font-size: .72rem; color: var(--apoio); }
+
+.btn {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  background: var(--amarelo); color: var(--preto);
+  font: 800 .85rem 'Montserrat', sans-serif; text-decoration: none; text-transform: uppercase; letter-spacing: .3px;
+  padding: 12px 8px; border-radius: 10px; min-height: 48px; white-space: nowrap;
+}
+.btn:active { transform: scale(.98); }
+.btn svg { width: 20px; height: 20px; }
+
+/* Vendida */
+.card.vendida .foto img { filter: grayscale(1); opacity: .45; }
+.card.vendida .off { display: none; }
+.card.vendida .btn { background: var(--cinza); color: var(--apoio); pointer-events: none; }
+.tarja {
+  position: absolute; top: 95px; left: 50%; transform: translateX(-50%) rotate(-8deg);
+  background: #E02424; color: #fff;
+  font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 2px;
+  padding: 2px 14px; border-radius: 6px;
+}
+
+/* Rodapé */
+.rodape {
+  max-width: 1100px; margin: 0 auto; padding: 24px 16px 48px;
+  border-top: 1px solid var(--linha); color: var(--apoio); font-size: .82rem;
+}
+.rodape strong { color: var(--texto); }
+.rodape .marca { margin-top: 16px; font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 2px; color: var(--dourado); }

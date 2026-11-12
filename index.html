@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Black Friday de Raquetes | Point 43</title>
+  <meta name="description" content="Raquetes de beach tennis com até 67% off na Black Friday da Point 43. Escolha a sua e reserve pelo WhatsApp.">
+  <meta property="og:title" content="Black Friday de Raquetes | Point 43">
+  <meta property="og:description" content="Vision, Kona, MBT, Top Ring e mais com até 67% off. Unidades limitadas.">
+  <meta property="og:image" content="img/r36.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <span class="logo">POINT 43</span>
+    <span class="selo">BLACK FRIDAY</span>
+  </header>
+
+  <section class="hero">
+    <p class="kicker">Catálogo oficial de raquetes</p>
+    <h1>Black <span>Friday</span></h1>
+    <p class="sub">Até <strong id="max-off">67%</strong> off em raquetes de beach tennis. Unidades limitadas: escolha a sua e reserve pelo WhatsApp.</p>
+    <ol class="passos">
+      <li><b>1</b> Escolha a raquete</li>
+      <li><b>2</b> Toque em <em>Quero essa</em></li>
+      <li><b>3</b> Receba o link de pagamento</li>
+    </ol>
+  </section>
+
+  <nav class="filtros" aria-label="Filtrar por marca">
+    <div class="chips" id="chips-marca"></div>
+    <label class="ordem">
+      Ordenar
+      <select id="ordem">
+        <option value="padrao">Destaques</option>
+        <option value="menor">Menor preço</option>
+        <option value="maior">Maior preço</option>
+        <option value="desconto">Maior desconto</option>
+      </select>
+    </label>
+  </nav>
+
+  <main class="grade" id="grade"></main>
+
+  <footer class="rodape">
+    <p><strong>Como funciona a reserva:</strong> ao tocar em "Quero essa", você manda a mensagem pra Point 43 e recebe o link de pagamento. A raquete fica separada por 24h após o envio do link. Unidades limitadas, sujeito a disponibilidade.</p>
+    <p class="marca">POINT 43 · Beach Tennis</p>
+  </footer>
+
+  <script src="raquetes.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
