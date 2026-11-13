@@ -39,7 +39,7 @@
       <div class="foto"><img src="img/${r.img}.webp" alt="${r.nome}" loading="lazy"></div>
       <span class="off">-${off(r)}%</span>
       ${!r.vendida && n > 1 ? `<span class="estoque">${n} unid.</span>` : ""}
-      ${!r.vendida && n === 1 ? `<span class="estoque">Última unidade</span>` : ""}
+      ${!r.vendida && n === 1 && !r.maisUnidades ? `<span class="estoque">Última unidade</span>` : ""}
       ${r.vendida ? `<span class="tarja">VENDIDA</span>` : ""}
       <div class="info">
         <span class="marca-tag">${r.marca}</span>
